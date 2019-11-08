@@ -17,3 +17,18 @@ export const fetchSmurfs= () => dispatch => {
       dispatch({ type: FETCH_SUCCESS, payload: res.data })})
       .catch(err => dispatch({ type: FETCH_FAILURE, payload: err.response }));
   };
+
+
+
+export const addSmurf= (smurf) => dispatch => {
+
+    dispatch({ type: START_FETCHING });
+   
+    axios
+      .post(
+        "http://localhost:3333/smurfs",smurf
+      )
+      .then(res => { console.log(res);
+      dispatch({ type: FETCH_SUCCESS, payload: res.data })})
+      .catch(err => dispatch({ type: FETCH_FAILURE, payload: err.response }));
+  };
