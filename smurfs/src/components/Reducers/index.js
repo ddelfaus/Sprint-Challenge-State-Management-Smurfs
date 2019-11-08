@@ -1,7 +1,7 @@
 
 
 const initialState = {
-    servers: [],
+    smurfs: [],
     isFetching: false, 
     error: ''
 }
@@ -11,7 +11,7 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
     switch(action.type) {
-        case START_FETCHING:
+
       
         default :
             return state;
